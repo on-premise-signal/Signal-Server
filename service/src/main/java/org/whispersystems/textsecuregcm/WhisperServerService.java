@@ -213,7 +213,7 @@ public class WhisperServerService extends Application<WhisperServerConfiguration
     environment.lifecycle().manage(pubSubManager);
     environment.lifecycle().manage(pushSender);
     environment.lifecycle().manage(messagesCache);
-    environment.lifecycle().manage(accountDatabaseCrawler);
+    // environment.lifecycle().manage(accountDatabaseCrawler);
 
     AttachmentControllerV1 attachmentControllerV1 = new AttachmentControllerV1(rateLimiters, config.getAttachmentsConfiguration().getAccessKey(), config.getAttachmentsConfiguration().getAccessSecret(), config.getAttachmentsConfiguration().getBucket()                                                  );
     AttachmentControllerV2 attachmentControllerV2 = new AttachmentControllerV2(rateLimiters, config.getAttachmentsConfiguration().getAccessKey(), config.getAttachmentsConfiguration().getAccessSecret(), config.getAttachmentsConfiguration().getRegion(), config.getAttachmentsConfiguration().getBucket());

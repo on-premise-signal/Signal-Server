@@ -49,7 +49,7 @@ public class AttachmentControllerTest {
                                                  .header("Authorization", AuthHelper.getAuthHeader(AuthHelper.VALID_NUMBER, AuthHelper.VALID_PASSWORD))
                                                  .get(AttachmentDescriptorV2.class);
 
-    assertThat(descriptor.getKey()).isEqualTo(descriptor.getAttachmentIdString());
+    assertThat(descriptor.getKey()).isEqualTo("attachments/" + descriptor.getAttachmentIdString());
     assertThat(descriptor.getAcl()).isEqualTo("private");
     assertThat(descriptor.getAlgorithm()).isEqualTo("AWS4-HMAC-SHA256");
     assertThat(descriptor.getAttachmentId()).isGreaterThan(0);
